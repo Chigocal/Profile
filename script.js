@@ -129,3 +129,4 @@ document.querySelector('.profile-card').addEventListener('mouseenter', function(
         profileImage.style.transition = 'transform 0.1s ease';
     }
 });
+
