@@ -148,7 +148,7 @@ body {
 .profile-card {
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: var(--shadow);
     overflow: hidden;
     transition: var(--transition);
@@ -337,6 +337,7 @@ body {
         height: auto;
         flex-direction: row;
         border-radius: 20px;
+        overflow: hidden;
     }
     
     .profile-header {
@@ -387,6 +388,7 @@ body {
     
     .profile-header {
         padding: 30px 20px 20px;
+        border-radius: 20px 20px 0 0;
     }
     
     .profile-header h1 {
@@ -410,6 +412,7 @@ body {
     
     .profile-header {
         padding: 25px 15px 15px;
+        border-radius: 20px 20px 0 0;
     }
     
     .profile-header h1 {
@@ -438,6 +441,7 @@ body {
 @media (max-width: 480px) {
     .profile-header {
         padding: 20px 10px 10px;
+        border-radius: 20px 20px 0 0;
     }
     
     .profile-image {
