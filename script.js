@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
             showNotification('Copied to clipboard!');
         });
     });
+
+    // Removed desktop mode indicator functionality
 });
 
 // Function to show notification
@@ -65,7 +67,10 @@ function showNotification(message) {
         boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
         zIndex: '1000',
         opacity: '0',
-        transition: 'opacity 0.3s ease'
+        transition: 'opacity 0.3s ease',
+        fontFamily: '"Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
+        fontWeight: '600',
+        fontSize: '0.9rem'
     });
     
     // Add to document
@@ -129,4 +134,6 @@ document.querySelector('.profile-card').addEventListener('mouseenter', function(
         profileImage.style.transition = 'transform 0.1s ease';
     }
 });
+
+// Removed desktop mode indicator functionality
 

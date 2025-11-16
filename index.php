@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Background Animation Elements -->
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
     <div class="container">
         <div class="profile-card">
             <div class="profile-header">
@@ -19,38 +34,40 @@
             </div>
             
             <div class="profile-body">
-                <p class="bio">
-                    Passionate software engineer with 8+ years of experience in developing scalable web applications. 
-                    Specialized in PHP, JavaScript, and modern frontend frameworks. Committed to writing clean, 
-                    efficient code and mentoring junior developers.
-                </p>
-                
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+1 (555) 123-4567</span>
+                <div class="profile-body-content">
+                    <p class="bio">
+                        Passionate software engineer with 8+ years of experience in developing scalable web applications. 
+                        Specialized in PHP, JavaScript, and modern frontend frameworks. Committed to writing clean, 
+                        efficient code and mentoring junior developers.
+                    </p>
+                    
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>john.doe@example.com</span>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>john.doe@example.com</span>
-                    </div>
-                </div>
-                
-                <div class="social-media">
-                    <h3>Connect with me</h3>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-icon" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="social-icon" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-icon" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                    
+                    <div class="social-media">
+                        <h3>Connect with me</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
