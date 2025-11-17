@@ -45,10 +45,15 @@
                         <div class="info-item">
                             <i class="fas fa-phone"></i>
                             <span>+1 (555) 123-4567</span>
+                            <button class="save-number-btn" id="saveNumberBtn">Save Number</button>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
                             <span>john.doe@example.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-home"></i>
+                            <span>123 Main Street, City, State 12345</span>
                         </div>
                     </div>
                     

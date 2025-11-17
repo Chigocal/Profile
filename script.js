@@ -32,11 +32,92 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add click functionality to copy contact info
     infoItems.forEach(item => {
         item.addEventListener('click', function() {
-            const textToCopy = this.querySelector('span').textContent;
-            copyToClipboard(textToCopy);
-            showNotification('Copied to clipboard!');
+            // Don't trigger copy for the phone number item when clicking on the save button
+            if (!event.target.classList.contains('save-number-btn')) {
+                const textToCopy = this.querySelector('span').textContent;
+                copyToClipboard(textToCopy);
+                showNotification('Copied to clipboard!');
+            }
         });
     });
+    
+    // Add save number functionality
+    const saveNumberBtn = document.getElementById('saveNumberBtn');
+    if (saveNumberBtn) {
+        saveNumberBtn.addEventListener('click', function() {
+            const phoneNumber = this.previousElementSibling.textContent;
+            saveContactToDevice('John Doe', phoneNumber);
+        });
+    }
+    
+    // Function to save contact to device
+    function saveContactToDevice(name, phone) {
+        // Check if the Contacts API is available
+        if ('contacts' in navigator && 'ContactsManager' in window) {
+            // Use the Contacts API if available
+            saveContactWithAPI(name, phone);
+        } else {
+            // Fallback: Create a vCard and trigger download
+            saveContactAsVCard(name, phone);
+        }
+    }
+    
+    // Save contact using the Contacts API (Chrome on Android)
+    function saveContactWithAPI(name, phone) {
+        if (navigator.contacts && navigator.contacts.save) {
+            const contact = {
+                name: name,
+                tel: phone
+            };
+            
+            navigator.contacts.save(contact).then(() => {
+                showNotification(`Contact ${name} saved successfully!`);
+            }).catch((error) => {
+                console.error('Error saving contact:', error);
+                // Fallback to vCard if API fails
+                saveContactAsVCard(name, phone);
+            });
+        } else {
+            // Fallback to vCard if API is not available
+            saveContactAsVCard(name, phone);
+        }
+    }
+    
+    // Save contact as vCard file (universal fallback)
+    function saveContactAsVCard(name, phone) {
+        try {
+            // Create vCard content
+            const vCardData = `BEGIN:VCARD
+    VERSION:3.0
+    FN:${name}
+    TEL:${phone}
+    END:VCARD`;
+            
+            // Create blob and download link
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            
+            // Create temporary download link
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${name.replace(/\s+/g, '_')}_contact.vcf`;
+            document.body.appendChild(a);
+            a.click();
+            
+            // Clean up
+            setTimeout(() => {
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }, 100);
+            
+            showNotification(`Contact file downloaded! Save to your contacts.`);
+        } catch (error) {
+            console.error('Error creating vCard:', error);
+            showNotification(`Error saving contact. Copy: ${phone}`);
+            // Fallback to copy clipboard
+            copyToClipboard(phone);
+        }
+    }
 
     // Removed desktop mode indicator functionality
 });

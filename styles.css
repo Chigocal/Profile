@@ -238,6 +238,32 @@ body {
     margin-right: 15px;
 }
 
+.info-item .fa-home {
+    font-size: 1.0rem;
+}
+
+.save-number-btn {
+    margin-left: auto;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.save-number-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.save-number-btn:active {
+    transform: translateY(0);
+}
+
 .social-media h3 {
     text-align: center;
     margin-bottom: 15px;
@@ -432,6 +458,15 @@ body {
         padding: 10px 12px;
     }
     
+    .info-item .fa-home {
+        font-size: 0.95rem;
+    }
+    
+    .save-number-btn {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+    
     .social-icon {
         width: 40px;
         height: 40px;
@@ -474,6 +509,15 @@ body {
     
     .info-item i {
         margin-right: 10px;
+    }
+    
+    .info-item .fa-home {
+        font-size: 0.9rem;
+    }
+    
+    .save-number-btn {
+        padding: 4px 8px;
+        font-size: 0.7rem;
     }
     
     .social-icons {
